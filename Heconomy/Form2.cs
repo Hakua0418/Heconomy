@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using MySql.Data.MySqlClient;
 
 namespace Heconomy
 {
     public partial class Form2 : Form
     {
 
-        public static readonly char DirectorySeparatorChar;
+        public String Cname;
+        public String mcid;
+        public int money;
+        public String BigC;
+        public String MidC;
 
         public Form2()
         {
@@ -152,6 +156,31 @@ namespace Heconomy
         private void Form2_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cname = textBox1.Text;
+            mcid = textBox2.Text;
+            money = int.Parse(textBox3.Text);
+            BigC = comboBox1.Text;
+            MidC = comboBox2.Text;
+            Program.FirstEasySql();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
